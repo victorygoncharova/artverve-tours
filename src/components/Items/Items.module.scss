@@ -1,0 +1,132 @@
+.main {
+  display: grid;
+  max-width: 1430px;
+  grid-template-columns: min-max(320px, 700px) 1fr;
+  grid-template-rows: repeat(6, max-content);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.itemSection {
+  margin-bottom: 150px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column: 1/-1;
+  & .image {
+    padding-right: 30px;
+  }
+  &:nth-child(odd) {
+    .image {
+      order: 2;
+      justify-self: end;
+      padding-left: 30px;
+      padding-right: 0;
+    }
+  }
+}
+
+.image {
+  max-width: 630px;
+  height: auto;
+  display: inline-block;
+  overflow: hidden;
+  & img {
+    transition: 1s;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.section-1 {
+  grid-row: 2;
+}
+.section-2 {
+  grid-row: 3;
+}
+.section-3 {
+  grid-row: 4;
+}
+.section-4 {
+  grid-row: 5;
+}
+.section-5 {
+  grid-row: 6;
+}
+
+.content {
+  align-self: center;
+}
+
+.headline {
+  font-size: 60px;
+  line-height: 68px;
+  margin-bottom: 60px;
+  padding-right: 15px;
+}
+
+.text {
+  width: 65%;
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 60px;
+}
+
+@media (max-width: 1120px) {
+  .text {
+    width: 100%;
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+
+@media (max-width: 1120px) {
+  .headline {
+    font-size: 46px;
+    line-height: 54px;
+    margin-bottom: 30px;
+  }
+  .text {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 620px) {
+  .main {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, max-content);
+  }
+
+  .itemSection {
+    margin-bottom: 80px;
+    grid-template-columns: 1fr;
+    & .image {
+      padding-right: 0;
+      order: 2;
+      justify-self: center;
+    }
+    &:nth-child(odd) {
+      .image {
+        order: 2;
+        justify-self: center;
+        padding-left: 0;
+      }
+    }
+  }
+
+  .image {
+    margin-top: 30px;
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+    overflow: hidden;
+    & img {
+      transition: 1s;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
